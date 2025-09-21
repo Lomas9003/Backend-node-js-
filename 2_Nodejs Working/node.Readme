@@ -1,0 +1,51 @@
+
+
+1. Synchronous (Blocking)
+
+Code executes line by line (one after another).
+
+Each operation must finish before the next one starts.
+
+If one operation takes time (e.g., reading a large file), the whole program waits (blocks).
+
+example 
+
+const fs = require("fs");
+
+// Synchronous file read (blocking)
+console.log("Start");
+const data = fs.readFileSync("file.txt", "utf8");
+console.log("File data:", data);
+console.log("End");
+
+o/p  
+Start
+File data: <contents of file>
+End 
+
+
+////////////////////////////////////////////////////////////////////
+
+2. Asynchronous (Non-Blocking)
+
+Code does not wait for operations to complete.
+
+Node.js uses its event loop and callbacks/promises/async-await to handle results later.
+
+While an operation (like file read or DB query) is pending, Node.js can process other tasks 
+
+const fs = require("fs");
+
+// Asynchronous file read (non-blocking)
+console.log("Start");
+fs.readFile("file.txt", "utf8", (err, data) => {
+  if (err) throw err;
+  console.log("File data:", data);
+});
+console.log("End");
+
+o/p 
+
+start 
+end 
+file data 
