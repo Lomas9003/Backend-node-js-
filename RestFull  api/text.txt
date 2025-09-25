@@ -1,0 +1,16 @@
+
+
+How we can make the Restfull api 
+
+
+GET:- /user => It will return html page from the server 
+GET:- /api/user => we can make the api also that return json data of all the user 
+
+// now we right the get api on the basis of id
+
+GET:- /user/:id => it will give the id dynamicall on 
+const req.params.id then find the value in databas then convert the data in json and return it to web  
+
+// 
+
+POST:- /api/user => it wil create a new user in data base
